@@ -68,3 +68,46 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+###Store Shape
+{
+  expenses: {
+    data: [
+      {
+        id: 'expense1',
+        description: 'Groceries',
+        amount: 50.00,
+        date: '2023-08-10',
+        categoryId: 'category1',
+        userId: 'user1',
+      },
+      // ... other expenses
+    ],
+    selectedExpense: {
+      id: 'expense1', // Selected expense for edit/view
+      description: 'Groceries',
+      amount: 50.00,
+      date: '2023-08-10',
+      categoryId: 'category1',
+      userId: 'user1',
+    },
+    status: 'idle', // 'idle', 'loading', 'succeeded', 'failed'
+    error: null, // Error message if status is 'failed'
+  },
+  expenseCategories: [
+    {
+      id: 'category1',
+      name: 'Groceries',
+    },
+    // ... other expense categories
+  ],
+  users: [
+    {
+      id: 'user1',
+      name: 'John Doe',
+      email: 'john@example.com',
+    },
+    // ... other users
+  ],
+  // ... other slices of state for different parts of your application
+}

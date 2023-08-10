@@ -3,11 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import { BrowserRouter } from 'react-router-dom';
+
+
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:8080'; // Your API base URL
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
